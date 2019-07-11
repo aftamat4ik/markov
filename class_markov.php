@@ -92,7 +92,7 @@ class Markov{
 		foreach($words as $key=>$word){
 			if( isset($words[$key+1]) ){
 				$word = trim($word);
-				$word = $this->trimUpper($word, $words[$key-1]);
+			        $word = $this->trimUpper($word, isset($words[$key - 1]) ? $words[$key - 1] : ' ');
 				$sword = $words[$key+1];
 				$sword = $this->trimUpper($sword, $word);
 				
